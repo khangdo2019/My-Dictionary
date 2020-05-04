@@ -14,24 +14,37 @@
         <URL value="@fxmldisplayvocab.css"/>
     </stylesheets>
     <children>
-        <HBox GridPane.rowIndex="0" GridPane.columnSpan="5">
+        <HBox GridPane.rowIndex="0" GridPane.columnSpan="5" minHeight="150">
             <Label text="USER DICTIONARY"/>
             <Button text="Add new word"/>
             <TextArea fx:id="txtSearch"/>
         </HBox>
-        <ListView fx:id="lstVocab" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <HBox GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="4">
+        <VBox>
+            <ListView minWidth="150" fx:id="lstVocab" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        </VBox>
+        
+        <HBox minHeight="150" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="4">
             <Label fx:id="lblWord"/>
             <Label fx:id="lblCollocation"/>
             <Label fx:id="lblDefinition"/>
         </HBox>
-        <HBox GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="4">
-            <ImageView>
+        <HBox minHeight="150" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="4">
+            <ImageView fitHeight="100" fitWidth="100">
                 <image>
-                    <Image />
+                    <Image url="@images/lack.jpg"/>
                 </image>
             </ImageView>
             <TextArea fx:id="txtExample" editable="false" wrapText="true"/>
         </HBox>
+        <VBox minHeight="150" minWidth="150" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2">
+            <Label text="Synonym"/>
+            <Label fx:id="lblSynonymWord"/>
+            <Label fx:id="lblSynonymExample"/>
+        </VBox>
+        <VBox minHeight="150" minWidth="150" GridPane.rowIndex="3" GridPane.columnIndex="3" GridPane.columnSpan="2">
+            <Label text="Related Form"/>
+            <Label fx:id="lblRelatedWord"/>
+            <Label fx:id="lblRelatedWordExample"/>
+        </VBox>
     </children>
 </GridPane>
