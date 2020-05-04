@@ -6,9 +6,32 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
 
 <GridPane id="GridPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mydictionary.khangdo.FXMLDisplayVocabController">
     <stylesheets>
         <URL value="@fxmldisplayvocab.css"/>
     </stylesheets>
+    <children>
+        <HBox GridPane.rowIndex="0" GridPane.columnSpan="5">
+            <Label text="USER DICTIONARY"/>
+            <Button text="Add new word"/>
+            <TextArea fx:id="txtSearch"/>
+        </HBox>
+        <ListView fx:id="lstVocab" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <HBox GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="4">
+            <Label fx:id="lblWord"/>
+            <Label fx:id="lblCollocation"/>
+            <Label fx:id="lblDefinition"/>
+        </HBox>
+        <HBox GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="4">
+            <ImageView>
+                <image>
+                    <Image />
+                </image>
+            </ImageView>
+            <TextArea fx:id="txtExample" editable="false" wrapText="true"/>
+        </HBox>
+    </children>
 </GridPane>
