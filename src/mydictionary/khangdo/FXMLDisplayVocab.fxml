@@ -20,22 +20,25 @@
             <TextArea fx:id="txtSearch" GridPane.columnIndex="4" maxWidth="50" maxHeight="30" wrapText="true"/>
         </HBox>
         <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.rowSpan="3">
-            <ListView minWidth="150" fx:id="lstVocab" />
+            <Label text="Word list"/>
+            <ListView minWidth="200" fx:id="lstVocab" />
         </VBox>
         
-        <HBox styleClass="box" minHeight="150" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="4">
+        <HBox styleClass="box" minHeight="150" minWidth="400" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="5">
             <Label fx:id="lblWord"/>
             <Label fx:id="lblCollocation"/>
             <Label fx:id="lblDefinition"/>
         </HBox>
-        <HBox minHeight="150" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="4">
-            <ImageView fitHeight="100" fitWidth="100">
-                <image>
-                    <Image url="@images/lack.jpg"/>
-                </image>
-            </ImageView>
+        
+        <ImageView fitHeight="200" fitWidth="200" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <image>
+                <Image url="@images/lack.jpg"/>
+            </image>
+        </ImageView>
+        <VBox minHeight="150" minWidth="200" GridPane.rowIndex="2" GridPane.columnIndex="2" GridPane.columnSpan="3">
+            <Label text="Example"/>
             <TextArea fx:id="txtExample" editable="false" wrapText="true"/>
-        </HBox>
+        </VBox>
         <VBox styleClass="box" minHeight="150" minWidth="150" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2">
             <Label text="Synonym"/>
             <Label fx:id="lblSynonymWord"/>
