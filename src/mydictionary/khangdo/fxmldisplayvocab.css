@@ -5,3 +5,8 @@
 .mainFxmlClass {
 
 }
+
+.box {
+    -fx-border-color: black black black black;
+    -fx-border-width: 1px 1px 1px 1px;
+}
