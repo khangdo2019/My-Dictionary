@@ -11,4 +11,24 @@ package mydictionary.khangdo.model;
  */
 public class Noun extends Word{
     private boolean countable;
+    
+    public Noun() {
+        super();
+    }
+
+    /**
+     * @return the countable
+     */
+    public boolean isCountable() {
+        return countable;
+    }
+
+    /**
+     * @param countable the countable to set
+     */
+    public void setCountable(boolean countable) {
+        this.countable = countable;
+    }
+    
+    
 }
