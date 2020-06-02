@@ -136,7 +136,7 @@ public abstract class Word implements Comparable<Word> {
      */
     @Override
     public String toString() {
-        return String.format("The word: %s, pronunciation: $s, definition: %s, "
+        return String.format("The word: %s, pronunciation: %s, definition: %s, "
                 + "frequency: %s, synonym: %s, antonym: %s, related form: %s.",
                 word, pron, meanings, freq, synonym, relatedForm);
     }

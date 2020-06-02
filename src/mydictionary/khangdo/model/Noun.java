@@ -10,7 +10,7 @@ package mydictionary.khangdo.model;
  * @author Khang Do, 2020
  */
 public class Noun extends Word{
-    private boolean countable;
+    private String[] countable = new String[2];
     
     public Noun() {
         super();
@@ -19,16 +19,33 @@ public class Noun extends Word{
     /**
      * @return the countable
      */
-    public boolean isCountable() {
+    public String[] isCountable() {
         return countable;
     }
 
     /**
      * @param countable the countable to set
      */
-    public void setCountable(boolean countable) {
+    public void setCountable(String[] countable) {
         this.countable = countable;
     }
     
-    
+    public String printCountable() {
+        String s = "";
+        for (String list: countable) {
+            s += list;
+        }
+        return s;
+    }
+           
+    @Override
+    public String toString() {
+        
+        return String.format("The noun: %s, pronunciation: %s, %s,definition: "
+                + "%s, "
+                + "frequency: %s, synonym: %s, antonym: %s, related form: %s.",
+                super.getWord(), super.getPron(), printCountable(), 
+                super.getMeanings(), super.getFreq(), super.getSynonym(), 
+                super.getRelatedForm());
+    }
 }
