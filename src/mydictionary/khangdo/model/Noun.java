@@ -37,7 +37,11 @@ public class Noun extends Word{
         }
         return s;
     }
-           
+    
+    /**
+     * 
+     * @return 
+     */
     @Override
     public String toString() {
         
