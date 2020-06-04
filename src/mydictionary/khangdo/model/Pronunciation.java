@@ -12,4 +12,41 @@ package mydictionary.khangdo.model;
 public class Pronunciation {
     private String british;
     private String american;
+    
+    public Pronunciation() {
+        
+    }
+
+    /**
+     * @return the british
+     */
+    public String getBritish() {
+        return british;
+    }
+
+    /**
+     * @param british the british to set
+     */
+    public void setBritish(String british) {
+        this.british = british;
+    }
+
+    /**
+     * @return the american
+     */
+    public String getAmerican() {
+        return american;
+    }
+
+    /**
+     * @param american the american to set
+     */
+    public void setAmerican(String american) {
+        this.american = american;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("British /%s/, American /%s/", british, american);
+    }
 }

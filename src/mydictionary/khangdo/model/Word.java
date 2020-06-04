@@ -33,6 +33,7 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
+     * Gets the word
      * @return the word
      */
     public String getWord() {
@@ -40,24 +41,36 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
+     * Sets the new word
      * @param word the word to set
+     * @throws IllegalArgumentException when word is empty or null
      */
-    public void setWord(String word) {
-        this.word = word;
+    public void setWord(String word) throws IllegalArgumentException{
+        if (word != null && !word.trim().equals("")) {
+            this.word = word;
+        } else throw new IllegalArgumentException("The word cannot be empty"
+                + "and null");        
     }
 
     /**
-     * @return the pron
+     * Gets the pronunciation of the word
+     * @return the pronunciation
      */
     public Pronunciation getPron() {
         return pron;
     }
 
     /**
+     * Sets the pronunciation of the word
      * @param pron the pron to set
+     * @throws IllegalArgumentException when the pronunciation is empty or null
      */
-    public void setPron(Pronunciation pron) {
-        this.pron = pron;
+    public void setPron(Pronunciation pron) throws IllegalArgumentException{
+        if (pron != null && (!pron.getBritish().trim().equals("") || 
+                !pron.getAmerican().trim().equals(""))) {
+            this.pron = pron;
+        } else throw new IllegalArgumentException("The pronunciation cannot be "
+                + "empty and null");
     }
 
     /**
