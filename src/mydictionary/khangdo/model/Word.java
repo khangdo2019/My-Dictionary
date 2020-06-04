@@ -18,9 +18,9 @@ public abstract class Word implements Comparable<Word> {
     private Pronunciation pron;
     private ArrayList<Definition> meanings;
     private Frequency freq;
-    private ArrayList<Word> synonym;
-    private ArrayList<Word> antonym;
-    private ArrayList<Word> relatedForm;
+    private ArrayList<Word> synonym; //Synonym can be empty
+    private ArrayList<Word> antonym; //Antonym can be empty
+    private ArrayList<Word> relatedForm; //Word related form can be empty
 
     public Word() {
 
@@ -29,7 +29,18 @@ public abstract class Word implements Comparable<Word> {
     public Word(String word, Pronunciation pron, ArrayList<Definition> meanings,
             Frequency freq, ArrayList<Word> synonym, ArrayList<Word> antonym,
             ArrayList<Word> relatedForm) {
-
+        setWord(word);
+        setPron(pron);
+        setMeanings(meanings);
+        setFreq(freq);
+    }
+    
+    public Word(String word, Pronunciation pron, ArrayList<Definition> meanings,
+            Frequency freq) {
+        setWord(word);
+        setPron(pron);
+        setMeanings(meanings);
+        setFreq(freq);
     }
 
     /**
@@ -74,6 +85,7 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
+     * Gets the definition of the word
      * @return the meanings
      */
     public ArrayList<Definition> getMeanings() {
@@ -81,13 +93,29 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
+     * Sets the definition of the word
      * @param meanings the meanings to set
+     * @throws IllegalArgumentException when the definition is null or empty
      */
-    public void setMeanings(ArrayList<Definition> meanings) {
-        this.meanings = meanings;
+    public void setMeanings(ArrayList<Definition> meanings) throws 
+            IllegalArgumentException{
+        boolean checkEmpty = true;
+        for (Definition list: meanings) {
+            if (list.getMeaning().trim().equals("")) {
+                checkEmpty = false;
+            }
+        }
+        if (meanings != null && checkEmpty) {
+            this.meanings = meanings;
+        } else {
+            throw new IllegalArgumentException("The Definition cannot be "
+                    + "empty or null");
+        }
+        
     }
 
     /**
+     * Gets the frequency of the word
      * @return the freq
      */
     public Frequency getFreq() {
@@ -95,13 +123,19 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
+     * Sets the frequency of the word
      * @param freq the freq to set
+     * @throws IllegalArgumentException when the frequency is null
      */
-    public void setFreq(Frequency freq) {
-        this.freq = freq;
+    public void setFreq(Frequency freq) throws IllegalArgumentException{
+        if (freq != null) {
+            this.freq = freq;
+        } else throw new IllegalArgumentException("The frequency cannot be null");
+        
     }
 
     /**
+     * Gets the synonym of the word
      * @return the synonym
      */
     public ArrayList<Word> getSynonym() {
@@ -109,13 +143,30 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
+     * Sets the synonym of a word, a synonym can be null
      * @param synonym the synonym to set
+     * @throws IllegalArgumentException when the synonym is empty if it's 
+     * not null
      */
-    public void setSynonym(ArrayList<Word> synonym) {
-        this.synonym = synonym;
+    public void setSynonym(ArrayList<Word> synonym) throws 
+            IllegalArgumentException{
+        if (synonym == null) {
+            this.synonym = synonym;
+        }
+        boolean checkEmpty = true;
+        for (Word list: synonym) {
+            if (list.getWord().trim().equals("")) {
+                checkEmpty = false;
+            }
+        }
+        if (synonym != null && checkEmpty) {
+            this.synonym = synonym;
+        }else throw new IllegalArgumentException("Synonym cannot be empty"
+                + "if it is not null.");        
     }
 
     /**
+     * Gets the antonym of the word
      * @return the antonym
      */
     public ArrayList<Word> getAntonym() {
@@ -123,13 +174,30 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
-     * @param antonym the antonym to set
+     * Sets the antonym of a word, a antonym can be null
+     * @param antonym the antonym to set    * 
+     * @throws IllegalArgumentException when the antonym is empty if it's 
+     * not null
      */
-    public void setAntonym(ArrayList<Word> antonym) {
-        this.antonym = antonym;
+    public void setAntonym(ArrayList<Word> antonym) throws 
+            IllegalArgumentException{
+        if (antonym == null) {
+            this.antonym = antonym;
+        }
+        boolean checkEmpty = true;
+        for (Word list: antonym) {
+            if (list.getWord().trim().equals("")) {
+                checkEmpty = false;
+            }
+        }
+        if (antonym != null && checkEmpty) {
+            this.antonym = antonym;
+        }else throw new IllegalArgumentException("Antonym cannot be empty"
+                + "if it is not null.");          
     }
 
     /**
+     * Get the related form of the word
      * @return the relatedForm
      */
     public ArrayList<Word> getRelatedForm() {
@@ -137,10 +205,27 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
+     * Sets the related form of the word, it can be null
      * @param relatedForm the relatedForm to set
+     * @throws IllegalArgumentException when the the related
+     * form of the word is empty if it's not null
      */
-    public void setRelatedForm(ArrayList<Word> relatedForm) {
-        this.relatedForm = relatedForm;
+    public void setRelatedForm(ArrayList<Word> relatedForm) throws 
+            IllegalArgumentException{
+        if (relatedForm == null) {
+            this.relatedForm = relatedForm;
+        }
+        boolean checkEmpty = true;
+        for (Word list: relatedForm) {
+            if (list.getWord().trim().equals("")) {
+                checkEmpty = false;
+            }
+        }
+        if (relatedForm != null && checkEmpty) {
+            this.relatedForm = relatedForm;
+        }else throw new IllegalArgumentException("The related form"
+                + "of the word cannot be empty if the it is not null."); 
+        
     }
 
     /**
