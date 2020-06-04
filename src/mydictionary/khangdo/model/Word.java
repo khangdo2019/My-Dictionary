@@ -169,7 +169,7 @@ public abstract class Word implements Comparable<Word> {
      * @param w
      * @return
      */
-    public int CompareTo(Word w) {
+    public int compareTo(Word w) {
         return this.word.compareToIgnoreCase(w.getWord());
     }
 }

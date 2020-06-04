@@ -48,4 +48,36 @@ public class Noun extends Word{
                 super.getMeanings(), super.getFreq(), super.getSynonym(), 
                 super.getRelatedForm());
     }
+    
+    /**
+     *
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null) {
+            return false;
+        }
+
+        if (o instanceof Noun) {
+            Noun c = (Noun) o;
+            return super.getWord() == c.getWord();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     *
+     * @param w
+     * @return
+     */    
+    public int compareTo(Noun w) {
+        return super.getWord().compareToIgnoreCase(w.getWord());
+    }
 }
