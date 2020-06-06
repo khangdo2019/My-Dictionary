@@ -229,8 +229,8 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
-     *
-     * @return
+     * Prints the word meanings and other related information
+     * @return a string of that word
      */
     @Override
     public String toString() {
@@ -240,9 +240,9 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
-     *
-     * @param o
-     * @return
+     * Check 2 words that are whether the same or not
+     * @param o the word that required to compare
+     * @return result of the comparison
      */
     @Override
     public boolean equals(Object o) {
@@ -263,9 +263,9 @@ public abstract class Word implements Comparable<Word> {
     }
 
     /**
-     *
-     * @param w
-     * @return
+     * To compare 2 words which one is higher
+     * @param w the word that we want to compare with
+     * @return 1 if this word is higher, 0 is equal and -1 if less than
      */
     public int compareTo(Word w) {
         return this.word.compareToIgnoreCase(w.getWord());
