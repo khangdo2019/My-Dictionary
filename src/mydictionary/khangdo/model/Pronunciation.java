@@ -20,6 +20,12 @@ public class Pronunciation {
         
     }
     
+    /**
+     * A constructor with a given British and American pronunciation for 
+     * the word
+     * @param british British pronunciation
+     * @param american American pronunciation
+     */
     public Pronunciation(String british, String american) {
         setBritish(british);
         setAmerican(american);
