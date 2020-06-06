@@ -11,4 +11,29 @@ package mydictionary.khangdo.model;
  */
 public class Image {
     private String url;
+    
+    public Image() {
+        
+    }
+
+    /**
+     * Gets the URL of the image
+     * @return the url of the image
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * Sets the URL of the image
+     * @param url the url to set
+     */
+    public void setUrl(String url) throws IllegalArgumentException{
+        if (url != null && !url.trim().equals("")) {
+            this.url = url;
+        } else throw new IllegalArgumentException("The word cannot be empty"
+                + "and null");
+    }
+    
+    
 }

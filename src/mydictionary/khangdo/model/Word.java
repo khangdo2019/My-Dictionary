@@ -21,7 +21,10 @@ public abstract class Word implements Comparable<Word> {
     private ArrayList<Word> synonym; //Synonym can be empty
     private ArrayList<Word> antonym; //Antonym can be empty
     private ArrayList<Word> relatedForm; //Word related form can be empty
-
+    
+    /**
+     * A no-args constructor for a word
+     */
     public Word() {
 
     }
