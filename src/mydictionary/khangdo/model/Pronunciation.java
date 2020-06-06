@@ -102,6 +102,6 @@ public class Pronunciation {
             Pronunciation c = (Pronunciation) o;
             return (this.british == c.getBritish() || 
                     this.american == c.getAmerican());
-        }
+        } else return false;
     }
 }

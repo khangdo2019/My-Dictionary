@@ -238,12 +238,12 @@ public abstract class Word implements Comparable<Word> {
     @Override
     public String toString() {
         return String.format("The word: %s, pronunciation: %s, definition: %s, "
-                + "frequency: %s, synonym: %s, antonym: %s, related form: %s.",
+                + "frequency: %s, synonym: %s, antonym: %s, related form: %s.\n",
                 word, pron, meanings, freq, synonym, relatedForm);
     }
 
     /**
-     * Check 2 words that are whether the same or not
+     * Check 2 words that whether are the same or not
      * @param o the word that required to compare
      * @return result of the comparison
      */
