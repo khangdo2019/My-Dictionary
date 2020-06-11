@@ -72,7 +72,7 @@ public class Adjective extends Word{
      */
     @Override
     public String toString() {
-        return String.format("The noun: %s, pronunciation: %s, definition: "
+        return String.format("The Adjective: %s, pronunciation: %s, definition: "
                 + "%s, frequency: %s, synonym: %s, antonym: %s, "
                 + "related form: %s.\nComparative: %s, Superlative: %s.\n",
                 super.getWord(), super.getPron(), super.getMeanings(), 

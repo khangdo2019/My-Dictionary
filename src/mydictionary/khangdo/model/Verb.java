@@ -14,6 +14,9 @@ public class Verb extends Word{
     private Verb presentParticiple;
     private Verb[] simpleTense = new Verb[2]; //I|they & he|she|it
     
+    /**
+     * A no-args constructor of a verb
+     */
     public Verb() {
         super();
     }
@@ -91,7 +94,7 @@ public class Verb extends Word{
     @Override
     public String toString(){
         String str = "";
-        str += String.format("The noun: %s, pronunciation: %s, definition: "
+        str += String.format("The Verb: %s, pronunciation: %s, definition: "
                 + "%s, "
                 + "frequency: %s, synonym: %s, antonym: %s, related form: %s.\n",
                 super.getWord(), super.getPron(), super.getMeanings(), 

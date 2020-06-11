@@ -52,8 +52,8 @@ public class Noun extends Word{
     public String toString() {
         
         return String.format("The noun: %s, pronunciation: %s, %s,definition: "
-                + "%s, "
-                + "frequency: %s, synonym: %s, antonym: %s, related form: %s.\n",
+                + "%s, frequency: %s, synonym: %s, antonym: %s, "
+                + "related form: %s.\n",
                 super.getWord(), super.getPron(), printCountable(), 
                 super.getMeanings(), super.getFreq(), super.getSynonym(), 
                 super.getRelatedForm());
