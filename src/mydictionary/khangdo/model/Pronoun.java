@@ -11,6 +11,9 @@ package mydictionary.khangdo.model;
  */
 public class Pronoun extends Word{
     
+    /**
+     * A no-args constructor of the pronoun
+     */
     public Pronoun() {
         super();
     }

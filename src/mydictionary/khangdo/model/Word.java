@@ -21,6 +21,7 @@ public abstract class Word implements Comparable<Word> {
     private ArrayList<Word> synonym; //Synonym can be empty
     private ArrayList<Word> antonym; //Antonym can be empty
     private ArrayList<Word> relatedForm; //Word related form can be empty
+    private ArrayList<Topic> topic;
     
     /**
      * A no-args constructor for a word
@@ -230,6 +231,22 @@ public abstract class Word implements Comparable<Word> {
                 + "of the word cannot be empty if the it is not null."); 
         
     }
+        
+    /**
+     * Gets the topic of the word
+     * @return the topic
+     */
+    public ArrayList<Topic> getTopic() {
+        return topic;
+    }
+
+    /**
+     * Sets the topic of the word
+     * @param topic the topic to set
+     */
+    public void setTopic(ArrayList<Topic> topic) {
+        this.topic = topic;
+    }
 
     /**
      * Prints the word meanings and other related information
@@ -237,9 +254,9 @@ public abstract class Word implements Comparable<Word> {
      */
     @Override
     public String toString() {
-        return String.format("The word: %s, pronunciation: %s, definition: %s, "
+        return String.format("The word: %s, topic: %s, pronunciation: %s, definition: %s, "
                 + "frequency: %s, synonym: %s, antonym: %s, related form: %s.\n",
-                word, pron, meanings, freq, synonym, relatedForm);
+                word, topic, pron, meanings, freq, synonym, relatedForm);
     }
 
     /**
@@ -273,4 +290,5 @@ public abstract class Word implements Comparable<Word> {
     public int compareTo(Word w) {
         return this.word.compareToIgnoreCase(w.getWord());
     }
+
 }
