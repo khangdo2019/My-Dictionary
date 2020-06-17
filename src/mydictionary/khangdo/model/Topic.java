@@ -13,5 +13,7 @@ public enum Topic {
     EDUCATION,
     TRAVEL,
     YOUTH,
-    CRIME;
+    CRIME,
+    SPOKEN_WORD,
+    ACADEMIC_WORD;
 }

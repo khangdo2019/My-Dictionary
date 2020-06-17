@@ -17,6 +17,7 @@ public class Noun extends Word{
     }
 
     /**
+     * Gets the countable or uncountable of the noun
      * @return the countable
      */
     public String[] isCountable() {
@@ -24,12 +25,17 @@ public class Noun extends Word{
     }
 
     /**
+     * Sets the countable and uncountable of the noun
      * @param countable the countable to set
      */
     public void setCountable(String[] countable) {
         this.countable = countable;
     }
     
+    /**
+     * Print the countable & countable
+     * @return 
+     */
     public String printCountable() {
         String s = "";
         for (String list: countable) {
@@ -37,22 +43,26 @@ public class Noun extends Word{
         }
         return s;
     }
-           
+    
+    /**
+     * Print the Noun
+     * @return string represent the information of the noun
+     */
     @Override
     public String toString() {
         
         return String.format("The noun: %s, pronunciation: %s, %s,definition: "
-                + "%s, "
-                + "frequency: %s, synonym: %s, antonym: %s, related form: %s.",
+                + "%s, frequency: %s, synonym: %s, antonym: %s, "
+                + "related form: %s.\n",
                 super.getWord(), super.getPron(), printCountable(), 
                 super.getMeanings(), super.getFreq(), super.getSynonym(), 
                 super.getRelatedForm());
     }
     
     /**
-     *
-     * @param o
-     * @return
+     * Compare 2 nouns
+     * @param o the noun that we need to compare
+     * @return true if 2 nouns are the same
      */
     @Override
     public boolean equals(Object o) {
@@ -73,11 +83,11 @@ public class Noun extends Word{
     }
 
     /**
-     *
-     * @param w
-     * @return
+     * To compare 2 nouns which one is higher
+     * @param n the noun that we want to compare with
+     * @return 1 if this noun is higher, 0 is equal and -1 if less than
      */    
-    public int compareTo(Noun w) {
-        return super.getWord().compareToIgnoreCase(w.getWord());
+    public int compareTo(Noun n) {
+        return super.getWord().compareToIgnoreCase(n.getWord());
     }
 }
