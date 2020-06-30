@@ -21,10 +21,25 @@ public class Definition {
     private ArrayList<Example> ex;
     private boolean isFormal;
 
+    /**
+     * A no-agrs constructor of definition of a word
+     */
     public Definition() {
 
     }
 
+    /**
+     * A constructor of definition with given meaning, collocation, & example
+     * @param meaning
+     * @param collocation
+     * @param ex 
+     */
+    public Definition(String meaning, ArrayList<String> collocation, 
+            ArrayList<Example> ex) {
+        setMeaning(meaning);
+        setCollocation(collocation);
+        setEx(ex);
+    }
     /**
      * Gets the definition of the word
      *

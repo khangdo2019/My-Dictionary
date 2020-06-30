@@ -5,6 +5,8 @@
  */
 package mydictionary.khangdo.model;
 
+import java.util.ArrayList;
+
 /**
  * A class defines a noun
  * @author Khang Do, 2020
@@ -12,8 +14,23 @@ package mydictionary.khangdo.model;
 public class Noun extends Word{
     private String[] countable = new String[2];
     
+    /**
+     * Create a no-args constructor
+     */
     public Noun() {
         super();
+    }
+    
+    /**
+     * Sets a constructor of a noun with given word, pronunciation, and definitions
+     * @param word the noun
+     * @param pron the pronunciation of the noun
+     * @param meanings the definition of the noun
+     */
+    public Noun(String word, Pronunciation pron) {
+        super();
+        setWord(word);
+        setPron(pron);        
     }
 
     /**

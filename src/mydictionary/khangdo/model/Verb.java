@@ -20,6 +20,18 @@ public class Verb extends Word{
     public Verb() {
         super();
     }
+    
+    /**
+     * Sets a constructor of a noun with given word, pronunciation, and definitions
+     * @param word the noun
+     * @param pron the pronunciation of the noun
+     * @param meanings the definition of the noun
+     */
+    public Verb(String word, Pronunciation pron) {
+        super();
+        setWord(word);
+        setPron(pron);        
+    }
 
     /**
      * Gets the verb in past tense
