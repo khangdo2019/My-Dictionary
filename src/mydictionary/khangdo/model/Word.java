@@ -81,11 +81,12 @@ public abstract class Word implements Comparable<Word> {
      * @throws IllegalArgumentException when the pronunciation is empty or null
      */
     public void setPron(Pronunciation pron) throws IllegalArgumentException{
-        if (pron != null && (!pron.getBritish().trim().equals("") || 
-                !pron.getAmerican().trim().equals(""))) {
-            this.pron = pron;
-        } else throw new IllegalArgumentException("The pronunciation cannot be "
-                + "empty and null");
+//        if (pron != null && (!pron.getBritish().trim().equals("") || 
+//                !pron.getAmerican().trim().equals(""))) {
+//            this.pron = pron;
+//        } else throw new IllegalArgumentException("The pronunciation cannot be "
+//                + "empty and null");
+        this.pron = pron;
     }
 
     /**
@@ -254,9 +255,9 @@ public abstract class Word implements Comparable<Word> {
      */
     @Override
     public String toString() {
-        return String.format("The word: %s, topic: %s, pronunciation: %s, definition: %s, "
+        return String.format("The word: %s, topic: %s, pronunciation: %s, definition: s, "
                 + "frequency: %s, synonym: %s, antonym: %s, related form: %s.\n",
-                word, topic, pron, meanings, freq, synonym, relatedForm);
+                word, topic, pron, freq, synonym, antonym, relatedForm);
     }
 
     /**

@@ -88,7 +88,7 @@ public class FXMLDisplayVocabController implements Initializable {
                 while ((line = br.readLine()) != null) {
                     String[] fields = line.split(",", -1);
 
-                    print = setANewWord(fields).toString();
+                    print += setANewWord(fields).toString();
                 }
                 txtExample.setText(print);
             } catch (FileNotFoundException ex) {

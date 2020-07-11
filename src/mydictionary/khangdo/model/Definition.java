@@ -190,10 +190,10 @@ public class Definition {
             str += String.format("(FORMAL)\n");
         } else str += String.format("(INFORMAL)\n");
         int count = 1;
-        for (Example list: ex) {            
-            str += String.format("Ex%d: %s.\n", count, list);
-            count++;
-        }
+//        for (Example list: ex) {            
+//            str += String.format("Ex%d: %s.\n", count, list);
+//            count++;
+//        }
         str += "Collocation: \n";
         for (String list: collocation) {
             str += String.format("-> %s.\n", list);

@@ -73,7 +73,7 @@ public class Noun extends Word{
                 + "related form: %s.\n",
                 super.getWord(), super.getPron(), printCountable(), 
                 super.getMeanings(), super.getFreq(), super.getSynonym(), 
-                super.getRelatedForm());
+                super.getAntonym(), super.getRelatedForm());
     }
     
     /**
