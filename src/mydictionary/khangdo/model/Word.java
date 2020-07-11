@@ -81,11 +81,11 @@ public abstract class Word implements Comparable<Word> {
      * @throws IllegalArgumentException when the pronunciation is empty or null
      */
     public void setPron(Pronunciation pron) throws IllegalArgumentException{
-//        if (pron != null && (!pron.getBritish().trim().equals("") || 
-//                !pron.getAmerican().trim().equals(""))) {
-//            this.pron = pron;
-//        } else throw new IllegalArgumentException("The pronunciation cannot be "
-//                + "empty and null");
+        if (pron != null && (!pron.getAmerican().trim().equals("")) || 
+                !pron.getBritish().trim().equals("")) {
+            this.pron = pron;
+        } else throw new IllegalArgumentException("The pronunciation cannot be "
+                + "empty and null");
         this.pron = pron;
     }
 
