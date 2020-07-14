@@ -69,7 +69,7 @@ public class WordTest {
     }
     
     /**
-     * Test of getWord & setWord methods, of class Word. 
+     * Test of getPron & setPron methods, of class Word. 
      * This test gives a bad input of an empty string, which is expected to
      * throw an IllegalArgumentException
      */
@@ -81,7 +81,7 @@ public class WordTest {
     }
     
     /**
-     * Test of getPron & setPron methods, of class Word. 
+     * Test of getMeanings & setMeanings methods, of class Word. 
      * This test gives a good input for setter method of Meanings, which should 
      * return the same Definition Object when we call the getter method
      */
@@ -109,13 +109,13 @@ public class WordTest {
     }
     
     /**
-     * Test of getWord & setWord methods, of class Word. 
+     * Test of getMeanings & setMeanings methods, of class Word. 
      * This test gives a bad input of an empty string of Definition Meaning, 
      * which is expected to throw an IllegalArgumentException
      */
     @Test (expected=IllegalArgumentException.class)
     public void testMeaningsBad() {
-        System.out.println("Test Getter/Setter Meanings Good");
+        System.out.println("Test Getter/Setter Meanings Bad");
         Word instance = new WordImpl();
         ArrayList<String> col = new ArrayList<String>();
         ArrayList<Example> ex = new ArrayList<Example>();
@@ -131,7 +131,162 @@ public class WordTest {
         meaningList.add(meaning);
         instance.setMeanings(meaningList);
     }
-
+    
+    
+    /**
+     * Test of getFreq & setFreq methods, of class Word. 
+     * This test gives a good input for setter method of Freq, which should 
+     * return the same Freq type when we call the getter method
+     */
+    @Test
+    public void testFreqGood() {
+        System.out.println("Test Getter/Setter Frequncy Good");
+        Word instance = new WordImpl();
+        Frequency expResult = Frequency.HIGH_FREQUENCY;
+        instance.setFreq(Frequency.HIGH_FREQUENCY);
+        Frequency result = instance.getFreq();
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of getFreq & setFreq methods, of class Word. 
+     * This test gives a bad input of a null object, which is expected to
+     * throw an IllegalArgumentException
+     */
+    @Test (expected=IllegalArgumentException.class)
+    public void testFreqBad() {
+        System.out.println("Test Getter/Setter Frequency Bad");
+        Word instance = new WordImpl();        
+        instance.setFreq(null);
+    }
+    
+    /**
+     * Test of getSynonym & setSynonym methods, of class Word. 
+     * This test gives a good input for setter method of Synonym, which should 
+     * return the same Word when we call the getter method
+     */
+    @Test
+    public void testSynonymGood() {
+        System.out.println("Test Getter/Setter Synonym Good");        
+        Word instance = new WordImpl();
+        ArrayList<Word> synonym = new ArrayList<Word>();
+        Word expResult = new Noun("lack",new Pronunciation("lack"));
+        synonym.add(expResult);
+        instance.setSynonym(synonym);
+        Word result = instance.getSynonym().get(0);
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of getSynonym & setSynonym methods, of class Word. 
+     * This test gives a bad input of an empty string to a Synonym, 
+     * which is expected to throw an IllegalArgumentException
+     */
+    @Test (expected=IllegalArgumentException.class)
+    public void testSynonymBad() {
+        System.out.println("Test Getter/Setter Synonym Bad");        
+        Word instance = new WordImpl();
+        ArrayList<Word> synonym = new ArrayList<Word>();
+        Word word = new Noun("",new Pronunciation("lack"));
+        synonym.add(word);
+        instance.setSynonym(synonym);        
+    }
+    
+    /**
+     * Test of getAntonym & setAntonym methods, of class Word. 
+     * This test gives a good input for setter method of Antonym, which should 
+     * return the same Word when we call the getter method
+     */
+    @Test
+    public void testAntonymGood() {
+        System.out.println("Test Getter/Setter Antonym Good");        
+        Word instance = new WordImpl();
+        ArrayList<Word> antonym = new ArrayList<Word>();
+        Word expResult = new Noun("lack",new Pronunciation("lack"));
+        antonym.add(expResult);
+        instance.setAntonym(antonym);
+        Word result = instance.getAntonym().get(0);
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of getAntonym & setAntonym methods, of class Word. 
+     * This test gives a bad input of an empty string to a Antonym, 
+     * which is expected to throw an IllegalArgumentException
+     */
+    @Test (expected=IllegalArgumentException.class)
+    public void testAntonymBad() {
+        System.out.println("Test Getter/Setter Antonym Bad");        
+        Word instance = new WordImpl();
+        ArrayList<Word> antonym = new ArrayList<Word>();
+        Word word = new Noun("",new Pronunciation("lack"));
+        antonym.add(word);
+        instance.setAntonym(antonym);        
+    }
+    
+    /**
+     * Test of getRelatedForm & setRelatedForm methods, of class Word. 
+     * This test gives a good input for setter method of RelatedForm, which should 
+     * return the same Word when we call the getter method
+     */
+    @Test
+    public void testRelatedFormGood() {
+        System.out.println("Test Getter/Setter Antonym Good");        
+        Word instance = new WordImpl();
+        ArrayList<Word> relatedForm = new ArrayList<Word>();
+        Word expResult = new Noun("lack",new Pronunciation("lack"));
+        relatedForm.add(expResult);
+        instance.setRelatedForm(relatedForm);
+        Word result = instance.getRelatedForm().get(0);
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of getRelatedForm & setRelatedForm methods, of class Word. 
+     * This test gives a bad input of an empty string to a RelatedForm, 
+     * which is expected to throw an IllegalArgumentException
+     */
+    @Test (expected=IllegalArgumentException.class)
+    public void testRelatedFormmBad() {
+        System.out.println("Test Getter/Setter Antonym Bad");        
+        Word instance = new WordImpl();
+        ArrayList<Word> relatedForm = new ArrayList<Word>();
+        Word word = new Noun("",new Pronunciation("lack"));
+        relatedForm.add(word);
+        instance.setRelatedForm(relatedForm);        
+    }
+    
+    /**
+     * Test of getTopic & setTopic methods, of class Word. 
+     * This test gives a good input for setter method of Freq, which should 
+     * return the same Freq type when we call the getter method
+     */
+    @Test
+    public void testTopicGood() {
+        System.out.println("Test Getter/Setter Topic Good");
+        Word instance = new WordImpl();
+        Topic expResult = Topic.EDUCATION;
+        ArrayList<Topic> topic = new ArrayList<Topic>();
+        topic.add(Topic.EDUCATION);
+        instance.setTopic(topic);
+        Topic result = instance.getTopic().get(0);
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of getTopic & setTopic methods, of class Word. 
+     * This test gives a bad input of a null object, which is expected to
+     * throw an IllegalArgumentException
+     */
+    @Test (expected=IllegalArgumentException.class)
+    public void testTopicBad() {
+        System.out.println("Test Getter/Setter Topic Bad");
+        Word instance = new WordImpl();        
+        ArrayList<Topic> topic = new ArrayList<Topic>();
+        topic.add(null);
+        instance.setTopic(topic);
+//        Topic result = instance.getTopic().get(0);
+    }
 //    /**
 //     * Test of setWord method, of class Word.
 //     */
