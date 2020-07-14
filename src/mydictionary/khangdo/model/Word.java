@@ -246,10 +246,7 @@ public abstract class Word implements Comparable<Word> {
      * @param topic the topic to set
      */
     public void setTopic(ArrayList<Topic> topic) throws IllegalArgumentException{
-        if (topic != null) {
-            this.topic = topic;
-        } else throw new IllegalArgumentException("The topic cannot be null");
-        
+           this.topic = topic;      
     }
 
     /**

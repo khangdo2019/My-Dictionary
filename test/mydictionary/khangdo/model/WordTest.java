@@ -275,17 +275,16 @@ public class WordTest {
     
     /**
      * Test of getTopic & setTopic methods, of class Word. 
-     * This test gives a bad input of a null object, which is expected to
-     * throw an IllegalArgumentException
+     * This test gives a bad input of a value that is not in the list, 
+     * which is expected to throw an IllegalArgumentException
      */
     @Test (expected=IllegalArgumentException.class)
     public void testTopicBad() {
         System.out.println("Test Getter/Setter Topic Bad");
         Word instance = new WordImpl();        
         ArrayList<Topic> topic = new ArrayList<Topic>();
-        topic.add(null);
+        topic.add(Topic.valueOf("CAR"));
         instance.setTopic(topic);
-//        Topic result = instance.getTopic().get(0);
     }
 //    /**
 //     * Test of setWord method, of class Word.
