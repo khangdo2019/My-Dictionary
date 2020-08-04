@@ -53,9 +53,9 @@ public class WordTest {
         antonym.add(new Noun(word, pron));
         relatedForm.add(new Noun(word, pron));
         topic.add(Topic.EDUCATION);
-        String str = String.format("The word: %s, topic: %s, pronunciation: %s, definition: s, "
+        String str = String.format("The word: %s, topic: %s, pronunciation: %s, definition: %s, "
                 + "frequency: %s, synonym: %s, antonym: %s, related form: %s.\n",
-                word, topic, pron, freq, synonym, antonym, relatedForm);
+                word, topic, pron, meanings, freq, synonym, antonym, relatedForm);
     }
 
     public class WordImpl extends Word {
@@ -273,34 +273,49 @@ public class WordTest {
         instance.setTopic(topic);
     }
 
-    /**
-     * Test of toString method, of class Word.
-     */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-//        Word instance = new WordImpl();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-}
-
 //    /**
-//     * Test of equals method, of class Word.
+//     * Test of toString method, of class Word.
 //     */
 //    @Test
-//    public void testEquals() {
-//        System.out.println("equals");
-//        Object o = null;
-//        Word instance = new WordImpl();
-//        boolean expResult = false;
-//        boolean result = instance.equals(o);
+//    public void testToString() {
+//        System.out.println("toString");
+////        Word instance = new WordImpl();
+//        String expResult = String.format("The word: %s, topic: %s, pronunciation: %s, definition: %s, "
+//                + "frequency: %s, synonym: %s, antonym: %s, related form: %s.\n",
+//                word, topic, pron, meanings, freq, synonym, antonym, relatedForm);
+//        String result = instance.toString();
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+////        fail("The test case is a prototype.");
+//}
+    
+    /**
+     * Test of equals methods, of class Word. This test gives a
+     * good input for equals method, which should return true
+     */
+    @Test
+    public void testEqualsGood() {
+        System.out.println("Test equals Good");
+        Object o = instance;
+        Word newInstance = instance;
+        boolean expResult = true;
+        boolean result = newInstance.equals(o);
+        assertEquals(expResult, result);        
+    }
+    
+    /**
+     * Test of equals methods, of class Word. This test gives a
+     * bad input for equals method of a null object, which should return false
+     */
+    @Test
+    public void testEqualsBad() {
+        System.out.println("Test equals Bad");
+        Object o = null;
+        Word instance = new WordImpl();
+        boolean expResult = false;
+        boolean result = instance.equals(o);
+        assertEquals(expResult, result);        
+    }
 //
 //    /**
 //     * Test of compareTo method, of class Word.
