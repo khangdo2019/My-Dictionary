@@ -25,9 +25,9 @@
         </VBox>
         
         <HBox styleClass="box" minHeight="150" minWidth="400" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="5">
-            <Label fx:id="lblWord"/>
-            <Label fx:id="lblCollocation"/>
-            <Label fx:id="lblDefinition"/>
+            <Label fx:id="lblWord" wrapText="true" minWidth="100"/>
+            <Label fx:id="lblCollocation" wrapText="true"/>
+            <Label fx:id="lblDefinition" wrapText="true"/>
         </HBox>
         
         <ImageView fitHeight="200" fitWidth="200" GridPane.rowIndex="2" GridPane.columnIndex="1">
@@ -41,12 +41,12 @@
         </VBox>
         <VBox styleClass="box" minHeight="150" minWidth="150" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2">
             <Label text="Synonym"/>
-            <Label fx:id="lblSynonymWord"/>
+            <Label fx:id="lblSynonymWord" wrapText="true"/>
             <Label fx:id="lblSynonymExample"/>
         </VBox>
         <VBox styleClass="box" minHeight="150" minWidth="150" GridPane.rowIndex="3" GridPane.columnIndex="3" GridPane.columnSpan="2">
             <Label text="Related Form"/>
-            <Label fx:id="lblRelatedWord"/>
+            <Label fx:id="lblRelatedWord" wrapText="true"/>
             <Label fx:id="lblRelatedWordExample"/>
         </VBox>
     </children>

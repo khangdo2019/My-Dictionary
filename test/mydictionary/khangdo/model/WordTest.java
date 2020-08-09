@@ -297,7 +297,8 @@ public class WordTest {
     public void testEqualsGood() {
         System.out.println("Test equals Good");
         Object o = instance;
-        Word newInstance = instance;
+        Word newInstance = new WordImpl();
+        newInstance.setWord(word);
         boolean expResult = true;
         boolean result = newInstance.equals(o);
         assertEquals(expResult, result);        
